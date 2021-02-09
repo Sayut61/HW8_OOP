@@ -1,21 +1,27 @@
 package task2;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        List<Worker> worker = new ArrayList<>();
-        System.out.println("Введите фамилию: ");
-        String surname = in.next();
-        System.out.println("Введите должность: ");
-        String position = in.next();
-        System.out.println("Введите год поступления: ");
-        int year = in.nextInt();
-        
+        ArrayList<Worker> workers = new ArrayList<>();
+        int work = 5;
+        for (int i = 0; i < work; i++) {
+            System.out.println("Введите фамилию, должность: ");
+            Worker worker = new Worker(in.next(),in.next());
+            workers.add(worker);
+            try {
+                System.out.println("Введите год: ");
+                Worker worker1 = new Worker(in.nextInt());
+            }catch (Exception ex){
+                System.out.println(ex.getMessage());
+            }finally {
+                workers.add(worker);
+            }
+        }
+        workers.sort(Comparator.comparing(Worker::getSurname));
+        System.out.println(workers.toString());
 
 
     }

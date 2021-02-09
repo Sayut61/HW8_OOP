@@ -1,15 +1,21 @@
 package task2;
 
-public class Worker {
-    String surname;
-    String position;
-    int year;
 
-    public Worker(String surname, String position, int year) {
+public class Worker{
+    private String surname;
+    private String position;
+    private int year;
+
+    public Worker(String surname, String position) {
         this.surname = surname;
         this.position = position;
+
+    }
+    public Worker(int year){
         this.year = year;
     }
+
+
 
     public String getSurname() {
         return surname;
