@@ -47,6 +47,6 @@ public class Worker{
                 "surname='" + surname + '\'' +
                 ", position='" + position + '\'' +
                 ", year=" + year +
-                '}';
+                '}'  +"\n";
     }
 }
